@@ -105,7 +105,7 @@ if __name__ == "__main__":
     print("\n=== MULAI PROGRAM (LOGGING VERSION) ===\n")
 
     # Setup Data
-    andi_order = Order("Andi", 500000)
+    Febri_order = Order("Febri", 500000)
     email_service = EmailNotifier()
 
     # Skenario 1: Menggunakan Credit Card
@@ -113,7 +113,7 @@ if __name__ == "__main__":
     checkout_cc = CheckoutService(payment_processor=cc_processor, notifier=email_service)
     
     # Eksekusi
-    checkout_cc.run_checkout(andi_order)
+    checkout_cc.run_checkout(Febri_order)
 
     # Skenario 2: Pembuktian OCP (QRIS)
     print("\n--- Skenario 2: QRIS git init---")
@@ -127,4 +127,5 @@ if __name__ == "__main__":
     qris_processor = QrisProcessor()
 
     checkout_qris = CheckoutService(payment_processor=qris_processor, notifier=email_service)
+
     checkout_qris.run_checkout(budi_order)
