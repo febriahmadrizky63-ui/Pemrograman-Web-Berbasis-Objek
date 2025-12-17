@@ -124,7 +124,7 @@ if __name__ == "__main__":
     service = RegistrationService(rules_list)
 
     # 3. Test Case 1: Mahasiswa Sukses
-    student_andi = Student("Andi", 3.5, 20)
+    student_febri = Student("Febri", 3.5, 20)
     service.register_student(student_andi)
 
     print("\n" + "-"*30 + "\n")
@@ -137,4 +137,5 @@ if __name__ == "__main__":
 
     # 5. Test Case 3: Gagal (IPK Rendah)
     student_caca = Student("Caca", 1.5, 18) # IPK 1.5 (Kurang)
+
     service.register_student(student_caca)
