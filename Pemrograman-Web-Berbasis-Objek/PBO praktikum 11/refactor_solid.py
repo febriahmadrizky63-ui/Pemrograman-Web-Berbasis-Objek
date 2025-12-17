@@ -88,14 +88,14 @@ class CheckoutService:
 print("=== MULAI PROGRAM ===")
 
 # Setup Data
-andi_order = Order("Andi", 500000)
+febri_order = Order("Febri", 500000)
 email_service = EmailNotifier()
 
 # Skenario 1: Menggunakan Credit Card
 print("\n--- Skenario 1: Credit Card ---")
 cc_processor = CreditCardProcessor()
 checkout_cc = CheckoutService(payment_processor=cc_processor, notifier=email_service)
-checkout_cc.run_checkout(andi_order)
+checkout_cc.run_checkout(febri_order)
 
 # Skenario 2: Menambah Metode QRIS (Pembuktian OCP)
 # Kita buat kelas baru di sini tanpa mengubah CheckoutService di atas
@@ -111,4 +111,5 @@ qris_processor = QrisProcessor()
 
 # Inject QRIS processor ke CheckoutService
 checkout_qris = CheckoutService(payment_processor=qris_processor, notifier=email_service)
+
 checkout_qris.run_checkout(budi_order)
